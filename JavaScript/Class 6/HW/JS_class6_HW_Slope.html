@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JS class6: JavaScript HW</title>
+  <script type="text/javascript">
+
+  function Point(x,y) {
+    this.x = x
+    this.y = y
+  }
+
+  function Line(p1,p2) {
+    this.p1 = p1
+    this.p2 = p2
+    this.slope = (this.p1.y - this.p2.y) / (this.p1.x - this.p2.x)
+
+    this.showSlope = function() {
+      alert("Line slope= " + this.slope)
+    }
+  }
+
+  var l1  = new Line(new Point(2,3), new Point(5,6))
+  l1.showSlope();
+
+  var l2 = new Line(new Point(7,8), new Point(9,10))
+  
+
+  if (l1.slope == l2.slope) {
+    alert("Parallel")
+  } else {
+    alert("NOT Parallel")
+  }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset= "utf-8" />
+  <title> Class 2 for CSS Learning.  </title>
+
+  <!--  For CSS selector: 在 head 裡面加入 style type="text/css" -->
+  <style type="text/css">  
+  span{text-decoration: overline;}  /* CSS 選擇的註解一定要用這個 不能用 // */
+
+  #id_name_bg{background-color: grey} /* ID 選擇器  */
+  .css_name_title{font-weight:bold;font-size:25px}
+  .css_name_article{margin:10px; border:1px dashed blue; padding:10px; width: 300px; height:100px}
+  .css_name_other{border:1px solid green}
+  .class_id_blue{color: blue;}
+
+  </style>
+
+</head>
+
+<body>
+    <!-- KEY: use keyword: Style -->
+    <h1> Class2: CSS - DIV, width, hieght, CSS selector</h2>
+
+    <div class="css_name_title class_id_blue" id="id_name_bg"> This is title with font-weight:bold;font-size:25px. </div>
+    <div class="css_name_article"> This is <span style="color:red; display:span">article</span> part. 
+    <!-- Default width = 100% -->
+
+    <div class="css_name_article"> div in div </div>
+    </div>
+
+    <div> CSS selector 的註解一定要用 /* 註解 */ 不能用  // 註解 <div>
+
+    <!-- This is a comment line. -->
+</body>
+</html>

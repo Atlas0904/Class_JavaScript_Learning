@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset= "utf-8" />
+  <title> Atlas Huang webpage introduction  </title>
+
+<!-- CSS control part (start)-->
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;          
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;        
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;      
+}
+</style>
+</head>
+<!-- CSS control part (end)-->
+
+
+
+<body>
+
+
+    <div id="header">
+    <h1>Atlas' Home </h1>
+    </div>
+
+    <div id="nav">
+    Introduction <br>
+    Award<br>
+    Experience<br>
+    Expertise<br>
+    Visited Country<br>
+    Planning to Go<br>
+    </div>
+    
+
+    <!-- The main section of your page -->
+    <div id="section">
+    <h1> Introdution </h1>
+    <h2> Part 1: Introduce the hyper link. </h2>
+    <div style= "color:Aquamarine"> This is a hyperlink to Google </div>
+    <a target="_blank" href="http://www.google.com/"> This is google web site. </a>
+    <br/>
+
+    <h2> Part 2: Loading the image. </h2>
+    
+
+    <script>
+    function showPictureAtlas(choice){
+        var pic;
+        if (choice==1) {
+            pic = "http://www.artsforge.com/boris/atlas.jpg"
+        } else if (choice == 2) {
+            pic = "http://thumbs.dreamstime.com/z/atlas-vector-2363855.jpg"
+        } else {
+            pic = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2K1SyEKny-E_eVqQIbg_PNyaQDtvUv_x8HXrWIjA2e_WqlxX0Q"
+        }
+        document.getElementById('profileImage').src = pic;
+    }
+    </script>
+
+    <img id="profileImage" width="240" height="360" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2K1SyEKny-E_eVqQIbg_PNyaQDtvUv_x8HXrWIjA2e_WqlxX0Q"> </img> <br>
+
+    <button type="button" onclick="showPictureAtlas(1)">Show me 1st Atlas</button>
+    <button type="button" onclick="showPictureAtlas(2)">Show me 2st Atlas</button>
+
+    <a href="https://www.google.com.tw/search?q=atlas&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjOtciBlqfLAhWCOJQKHVgfApcQ_AUIBygB&biw=1280&bih=646&dpr=2"
+    
+    onMouseOut="document.getElementById('changePic').src='http://www.artsforge.com/boris/atlas.jpg'"
+    onMouseOver="document.getElementById('changePic').src='http://thumbs.dreamstime.com/z/atlas-vector-2363855.jpg'">
+    This is a test for link Pic
+    </a>
+
+    <img id="changePic" width="240" height="360" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2K1SyEKny-E_eVqQIbg_PNyaQDtvUv_x8HXrWIjA2e_WqlxX0Q"> </img> <br>
+
+    <h2> Part 3: List</h2>
+    <h3> ToDO list </h3>
+    <ul>
+        <li> HTML </li>
+        <li> CSS </li>
+        <li> Java script </li>
+        <li> PHP </li>
+        <li> MySQL </li>
+        <li> RoR </li>
+    </ul>
+
+    <h2> Part 4: Build up table </h2>
+    <table border="0" width="400" cellpadding ="2">
+        <tr> <td colspan="2"> <b>Java script class schedule</b> </td> </tr>  <!-- b, u, i-->
+        <tr> <td>3/2</td><td>3/5</td> </tr>
+        <tr> <td>3/9</td><td>3/12</td> </tr>
+        <tr> <td>3/16</td><td>3/19</td> </tr>
+        <tr> <td>3/23</td><td>3/26</td> </tr>
+        <tr> <td>3/30</td><td>4/2</td> </tr>
+    </table>
+
+    <h2> Part 5: Get your location </h2>
+        <button onclick="getLocation()"> Click to know your location </button>
+
+        <p id="demo"></p>
+
+        <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;  
+        }
+        </script>
+
+     <h2> Part 6: HTML API to use </h2>   
+
+    <!-- This is a comment line. -->
+    </div>
+    <!-- The end of the section -->
+
+    <div id="footer">
+    Copyright. The company of Atlas Huang <br>
+    2016/03/04
+    </div>   
+
+
+</body>
+</html>

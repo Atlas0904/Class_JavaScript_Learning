@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 7: HTML add and remove element in DOM </title>
+  <script type="text/javascript">
+    function add() {
+      var link = document.createElement("a");  // <a></a>
+      link.innerHTML = "Google<br>";
+      link.href = "http://google.com.tw"
+      // <a href="http://google.com.tw"> Google </a>
+      document.body.appendChild(link); // 連結到 HTML DOM
+    }
+    function del() {
+      var menu =  document.getElementById("menu");
+      var add =  document.getElementById("add-btn");
+      if (!add) menu.removeChild(add);  // 斷開不過物件還在
+    }
+  </script>
+</head>
+<body>
+  <div id="menu">
+    <button id="add-btn" onclick="add();"> add </button>
+    <button onclick="del();"> del </button>
+  </div>
+  <!-- <a> </a> -->
+</body>
+</html>

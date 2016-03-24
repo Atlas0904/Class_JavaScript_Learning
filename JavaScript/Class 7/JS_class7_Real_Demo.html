@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 7: HTML interactive real case </title>
+  <script type="text/javascript">
+  function id(index) {
+    return document.getElementById(index);
+  }
+
+/*
+  function change(choice) {
+    if ("page" == choice) {
+      id("page").style.fontWeight = "bold";
+      id("img").style.fontWeight = "normal";   //CSS 用底線 fontWeight 是 CSS 屬性
+      id("btn").value= "Page Search";  // value是修改 HTML屬性
+    } else if ("image" == choice) {
+      id("page").style.fontWeight = "normal";
+      id("img").style.fontWeight = "bold";   //CSS 用底線 fontWeight 是 CSS 屬性
+      id("btn").value = "Image Search";  // value是修改 HTML屬性
+    }
+  }
+*/
+
+  function change(choice) {
+    if ("page" == choice) {
+      id("page").className = "current"
+      id("img").className = "tab"
+      id("btn").value= "Page Search";  // value是修改 HTML屬性
+    } else if ("image" == choice) {
+      id("page").className = "tab"
+      id("img").className = "current"
+      id("btn").value = "Image Search";  // value是修改 HTML屬性
+    }
+  }
+
+  </script>
+  <style type="text/css">
+    .tab{
+      color: black; font-weight: normal;
+    }
+    .current{
+      color: red; font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span id="page" class="current" onclick="change('page');">Page</span>
+    <span id="img" class="tab" onclick="change('image');">Image</span>
+  </div>
+  <div>
+      <input type="text" />
+      <input type="button" value="Page Search" id="btn" />
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> [HW] JavaScript Class 4: Java script Prime num</title>
+
+
+   <script>
+
+
+    var input = prompt("Please enter a number to check if a Prime", "1");
+    if (isNaN(input)) {  
+      alert("input " + input + " NOT a number.");
+    }
+
+    var isPrime = 1;
+    if (input == 1) {
+      isPrime =0;
+    } else if (input == 2) {
+      isPrime =1;
+    } else {
+      for (i=1; i < input/2; i++ ) {
+        if (input%i == 0) {
+          isPrime = 0;
+          break;
+        }
+      }
+      if (isPrime > 0) {
+        alert("input " + input + " is a Prime");
+      } else {
+        alert("input " + input + " is NOT a Prime");
+      }
+    }
+
+   </script>
+   </head>
+<body>
+  
+</body>
+</html>

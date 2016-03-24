@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 5: OOO in JS </title>
+  <script type="text/javascript">
+
+  var player=new Object();
+  player.name = "Player";
+  player.hp = 100;
+
+  player.fight = function() {
+    this.hp = this.hp - 2;
+  };
+
+  player.report = function() {
+    alert(this.name + "." + this.hp);  
+  };
+
+  //alert("JavaScript Class 5: OOO in JS");
+  player.fight();
+  player.report();
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 5: Global var</title>
+  <script type="text/javascript">
+  var x = 3;
+  var outer=function() {
+    var y=4;
+    function inner() {
+      var z=5;
+      return x+y+z;
+    }
+  
+    var result=inner();
+    alert(result);
+  }
+  outer();
+  </script>
+  <style type="text/css">
+  a{color: #880000; text-decoration: none;}
+  a:hover{text-decoration: underline;}   //
+  </style>
+
+</head>
+<body>
+  <a href="http://www.google.com"> Google </a>
+</body>
+</html>

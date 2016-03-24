@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset= "utf-8" />
+  <title> Class 2 for Layout Learning </title>
+  <style type="text/css">
+  .frame{
+    background-color:#eeeeee;width: 100%;
+    margin-left: auto; margin-right: auto;
+  }
+  .left{
+    background-color: red; width: 50%;
+    float: left; padding:10px;
+  }
+  .right{
+    background-color: blue; width: 50%;
+    float: left; padding: 10px;
+  }
+  .highlight {
+    color: red;
+    font-weight: bold;
+  }
+  .clear_left{
+    width: 500px;
+    float: left; padding: 10px;
+  }
+  .clear_right{
+    width: 500px;
+    float: left;
+  }
+  .clear{
+    clear: both;
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="frame"> 
+  This example tell us how to make the center of this wordings.
+  </div>
+
+  <div class="left"> Left </div>
+  <div class="right"> Right </div>
+
+
+  <div class="clear_left"> Clear Left </div>
+  <div class="clear_right"> Clear Right </div>
+
+  <div> Note: Float is not put on left or right. Float put element at left-top if can not put it below </div>
+  <div class="highlight"> Note: The real width = width + padding + border </div>
+
+</body>
+</html>

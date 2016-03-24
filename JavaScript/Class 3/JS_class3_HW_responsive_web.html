@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> JavaScript Class 3: Responsive design </title>
+  <meta charset= "utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!-- 初始縮放, 最大縮放 都是1, 也就是都不要動-->
+  <style type="text/css">
+  .frame{
+    width: 1000px; margin: 0px auto; text-align: center;
+  }
+  .box{
+    display: inline-block; vertical-align: top;
+    width: 300px; height: 200px; margin: 5px;
+    background-color: #ffcccc;
+  }
+  /* CSS 3 media query */
+  @media screen and (max-width: 500px) {
+  /* 如果使用者用 螢幕 且 最大寬度不超過 500 套用這個rule */
+    .frame {
+      width: 100%;
+    }
+    .box{
+      font-size: 10px;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="box"> Left </div>
+    <div class="box"> Center </div>
+    <div class="box"> Right </div>
+  </div>
+
+</body>
+</html>

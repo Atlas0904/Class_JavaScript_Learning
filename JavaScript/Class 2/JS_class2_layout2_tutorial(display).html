@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset= "utf-8" />
+  <title> Class 2 for Layout Learning </title>
+  <style type="text/css">
+  body{margin: 0px;}
+  .frame{
+    background-color:#eeeeee;width: 100%;
+    margin-left: auto; margin-right: auto;
+  }
+  .left{
+    background-color: red; width: 49%;  /* 用 inline block 需要預留空間 480 -> 475*/
+    padding: 0px; border: 0px;
+    display: inline-block; vertical-align: top;
+  }
+  .right{
+    background-color: blue; width: 9%; /* 用 inline block 需要預留空間 500 -> 495*/
+    padding: 0px; border: 0px;
+    display: inline-block; vertical-align: bottom;
+  }
+  .highlight {
+    color: red;
+    font-weight: bold;
+  }
+  .head{
+    background-color: #eeeeee;
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class= "head">
+    <div class="frame"> 
+    This example tell us how to make the center of this wordings.
+    </div>
+
+    <div class="left"> Left 
+        <div> Left Item 1 </div>
+        <div> Left Item 2 </div>
+        <div> Left Item 3 </div>
+    </div>   <!-- <====== 這邊左邊其實有空白!!! 所以造成 你不能用 50% 50% 會多一個 px-->
+    <div class="right"> Right </div>
+  </div>
+
+
+
+</body>
+</html>

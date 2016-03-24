@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 5: Create your own function call </title>
+  <script type="text/javascript">
+
+  function isPrime (input) {
+    alert("Test");
+    
+    bPrime = true;
+    if (input == 1 || input == 2) {
+      bPrime = true;
+    } else {
+      for (i=1; i < input/2; i++ ) {
+        if (input%i == 0) {
+          bPrime = 0;
+          break;
+        }
+      }
+    }
+    if (bPrime) {
+      alert("input " + input + " is a Prime");
+    } else {
+      alert("input " + input + " is NOT a Prime");
+    }
+    return bPrime;
+    
+  }
+
+  /*
+  function alertString() {
+    alert("Hello");
+  }
+  alert(alertString);   // 印出整個 function 而非執行
+  alertString()  // 執行要用括號
+*/
+  var num = 10;
+  var result = isPrime(num);
+  if (result) {
+    alert("Number: " + num + "is a Prime");  
+  } else {
+    alert("Number: " + num + "is NOT a Prime");  
+  }
+  
+
+
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>

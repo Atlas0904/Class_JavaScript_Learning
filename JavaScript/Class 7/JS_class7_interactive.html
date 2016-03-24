@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 7: Interactive </title>
+  <script type="text/javascript">
+  function change() {
+    var content = document.getElementById("content");
+    content.innerHTML = "Today is a wonderful day";
+  }
+  function changeEmotion() {
+    var emotionObj = document.getElementById("emotion");
+    emotionObj.innerHTML = "happy";
+    emotionObj.style.color= "red";
+  }
+  </script>
+</head>
+<body>
+  <h2> Demo JavaScript </h2>
+  <div id="content"> Today is a <span id="emotion">good</span> day.</div>
+  <button onclick="changeEmotion();"> Click me </button>  <!--單引號雙引號輪流用 -->
+</body>
+</html>
+

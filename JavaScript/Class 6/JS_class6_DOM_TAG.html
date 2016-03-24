@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 6: window tag demo </title>
+  <script type="text/javascript">
+    alert(window.document.body)   // show null 因為跑到這邊body空
+  </script>
+</head>
+<body>
+  Hello world
+</body>
+</html>
+<script type="text/javascript">
+  alert(window.document.body)
+  window.document.body.innerHTML="<u>Hello world is changed by me </u> 2" 
+  window.document.body.innerHtml // 很難 debug 物件.新成員
+</script>
