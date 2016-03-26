@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Event Listener v3 </title>
+	
+	<script type="text/javascript">
+		// function(){} anonumous function 
+		function init(){  // body 前
+			var hello = document.getElementById("hello");
+			hello.onclick = function (){  // 物件 + 方法
+				alert("Hello world 物件 & 方法")
+			}
+		}
+	</script>
+</head>
+
+<!-- 代表所有靜態內容 都被初始化 -->
+<body onload="init();">
+
+
+<body>
+	<span id="hello"> Hello 物件 + 方法 demo </span>
+
+</body>
+</html>

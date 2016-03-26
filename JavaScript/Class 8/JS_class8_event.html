@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Event </title>
+	<script type="text/javascript">
+	function over(elt) {
+		elt.style.color = "red";
+		elt.style.fontWeight = "bold";
+	}
+	function out(elt) {
+		elt.style.color = "green";
+		elt.style.fontWeight = "normal";
+	}
+	function dbClick() {
+		alert('This is a double click demo');
+	}
+
+	</script>
+</head>
+<body>
+	<span ondblclick="dbClick(this);"
+	      onmouseout="out(this);" 
+	      onmouseover="over(this);">
+	      This is demo for mouse action </span>
+	<!-- 雙引號內 可以用任意的 js 程式碼-->
+</body>
+</html>

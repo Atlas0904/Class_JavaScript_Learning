@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Event Porcess </title>
+	
+	<script type="text/javascript">
+		// function(){} anonumous function 
+		function init(){  // body 前
+			var hello = document.getElementById("hello");
+			var handler = function (e) {
+				alert(e.clientX + "," + clientY);
+			}
+			hello.addEventListener("click", handler);
+		}
+		/*
+		1. 事件發生 例如使用者 典籍了飆間的範圍
+		2. 瀏覽器蒐集與事件相關的資訊 並製造一個 Event Object 用來存放這些資訊
+		   var eventObj = 事件物件;
+		3. 呼叫你提供的事件處理器(函式), 並將事件過參數傳入
+		   事件處理器(eventObj)
+		*/
+
+
+	</script>
+</head>
+
+<!-- 代表所有靜態內容 都被初始化 -->
+<body onload="init();">
+
+
+<body>
+	<span id="hello"> Hello 物件 + 方法 demo </span>
+
+</body>
+</html>

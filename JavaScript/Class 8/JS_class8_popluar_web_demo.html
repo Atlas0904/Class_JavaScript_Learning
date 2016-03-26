@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Advance for tag menu </title>
+	<script type="text/javascript">
+		function change(choice){
+			
+			// var popular = document.getElementById("popular");
+			// var latest = document.getElementById("latest");
+			// var hot = document.getElementById("hot");
+
+			// if (choice==0) {
+			// 	popular.style.display="block";
+			// 	latest.style.display="none";
+			// 	hot.style.display="none";
+			// } else if (choice==1) {
+			// 	popular.style.display="none";
+			// 	latest.style.display="block";
+			// 	hot.style.display="none";
+			// } else {
+			// 	popular.style.display="none";
+			// 	latest.style.display="none";
+			// 	hot.style.display="block";
+			// }
+
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<span onclick="change(0);"> Popular </span>
+		<span onclick="change(1);"> Lastest</span>
+		<span onclick="change(2);"> Hot</span>
+	</div>
+	<hr/>
+	<div id="popular"> Popular movies </div>
+	<div id="latest" style="display: none"> Latest Movies </div>
+	<div id="hot" style="display: none"> Hot Movies </div> 
+</body>
+</html>

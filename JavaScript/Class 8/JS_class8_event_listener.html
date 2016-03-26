@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Event Listener </title>
+	
+	<script type="text/javascript">
+		function init(){  // body 前
+			var hello = document.getElementById("hello");
+			var handler =  function() {
+				alert("This is Event handler trigger")
+			}
+			hello.addEventListener("click"/*事件名稱*/, handler/*事件處理器function*/);
+		}
+
+	</script>
+</head>
+
+<!-- 代表所有靜態內容 都被初始化 -->
+<body onload="init();">
+
+
+<body>
+	<span id="hello"> Hello </span>
+
+</body>
+</html>

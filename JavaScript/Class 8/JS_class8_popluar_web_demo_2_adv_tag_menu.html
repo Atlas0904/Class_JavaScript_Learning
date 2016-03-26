@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Advance for tag menu </title>
+	<script type="text/javascript">
+		function change(choice){
+			// 先把大家都藏起來
+			var con;
+			for(var i=0; i<=2; i++) {
+				con = document.getElementById("con-" + i);
+				con.style.display="none";
+			}
+			con = document.getElementById("con-" + choice);
+			con.style.display = "block";
+			//alert("choice=" +choice);
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<span onclick="change(0);"> Popular </span>
+		<span onclick="change(1);"> Lastest</span>
+		<span onclick="change(2);"> Hot</span>
+	</div>
+	<hr/>
+	<div id="con-0"> Popular movies </div>
+	<div id="con-1" style="display: none"> Latest Movies </div>
+	<div id="con-2" style="display: none"> Hot Movies </div> 
+</body>
+</html>
