@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  JavaScript Class 8: Drag </title>
+	
+	<script type="text/javascript">
+
+		var box;
+		
+		function init(){  // body 前
+			//var box = document.getElementById("box");
+			box = document.getElementById("box");  // Global var 方便用
+			//box.addEventListener("click", pickup);
+			box.addEventListener("mousedown", mousedown);
+			box.addEventListener("mouseup", mouseup);
+		}
+		function mousedown() {
+			document.addEventListener("mousemove", move);
+		}
+		function mouseup() {
+			document.removeEventListener("mousemove", move);
+		}
+
+		function pickup() {
+			document.addEventListener("mousemove", move);
+			// 拿起來後 若在點擊 應該要放下
+			box.removeEventListener("click", pickup);
+			box.addEventListener("click", putdown);
+		}
+		
+		function move(e){
+			//document.title = e.clientX + "," + e.clientY;
+			//box.style.left=(e.clientX - 100/2) + "px";  // note 0px 不行
+			//box.style.top= (e.clientY - 100/2) + "px";
+			
+			box.offset.left = (e.clientX) + "px";
+			box.offset.top = (e.clientY) + "px";
+
+			// box.offset.left, box.offset.top
+		}
+		function putdown() {
+			document.removeEventListener("mousemove", move);
+			// 放下之後 若在點擊 應該要拿起來
+			box.removeEventListener("click", putdown);
+			box.addEventListener("click", pickup);
+		}
+
+	</script>
+	<style type="text/css">
+	.box{
+		width: 100px; height: 100px; background-color: green;
+		position: absolute; left: 100px; top: 100px;
+		border-radius: 10px;
+	}
+	</style>
+
+</head>
+
+<!-- 代表所有靜態內容 都被初始化 -->
+<body onload="init();">
+<div class= "box" id= "box"></div>
+
+</body>
+</html>
