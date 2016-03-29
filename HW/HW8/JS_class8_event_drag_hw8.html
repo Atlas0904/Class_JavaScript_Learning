@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>  JavaScript Class 8: Drag </title>
+	<title>  JavaScript Class 8: Drag HW </title>
 	
 	<script type="text/javascript">
 
 		var box;
+		var box_left = 100;   // init value= box css left
+		var box_top = 100; // init value= box css top
+		
+		var delta_x;
+		var delta_y;
 		
 		function init(){  // body 前
 			//var box = document.getElementById("box");
@@ -15,18 +20,14 @@
 			box.addEventListener("mousedown", mousedown);
 			box.addEventListener("mouseup", mouseup);
 		}
-		function mousedown() {
+
+		function mousedown(e) {
+			delta_x = e.clientX - box.offsetLeft;
+			delta_y =  e.clientY - box.offsetTop;
 			document.addEventListener("mousemove", move);
 		}
 		function mouseup() {
 			document.removeEventListener("mousemove", move);
-		}
-
-		function pickup() {
-			document.addEventListener("mousemove", move);
-			// 拿起來後 若在點擊 應該要放下
-			box.removeEventListener("click", pickup);
-			box.addEventListener("click", putdown);
 		}
 		
 		function move(e){
@@ -34,16 +35,8 @@
 			//box.style.left=(e.clientX - 100/2) + "px";  // note 0px 不行
 			//box.style.top= (e.clientY - 100/2) + "px";
 			
-			box.offset.left = (e.clientX) + "px";
-			box.offset.top = (e.clientY) + "px";
-
-			// box.offset.left, box.offset.top
-		}
-		function putdown() {
-			document.removeEventListener("mousemove", move);
-			// 放下之後 若在點擊 應該要拿起來
-			box.removeEventListener("click", putdown);
-			box.addEventListener("click", pickup);
+			box.style.left=(e.clientX - delta_x)  + "px";  // note 0px 不行
+			box.style.top= (e.clientY - delta_y) + "px";
 		}
 
 	</script>
