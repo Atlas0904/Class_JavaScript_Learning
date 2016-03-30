@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 9: Timer </title>
+  <script type="text/javascript">
+    var timer;
+    var interval_id;
+    function init() {
+      timer = document.getElementById("timer");
+      interval_id = window.setInterval(countdown, 1000);    // ms
+      
+    }
+    function countdown() {
+      timer.innerHTML = timer.innerHTML - 1;
+      if (timer.innerHTML > 0) {
+      } else {
+        alert("Happy birthday");
+        window.clearInterval(interval_id);   // 排成編號
+      }
+    }
+  </script>
+
+</head>
+<body onload="init();">
+  <span id ="timer"> 3 </span>
+</body>
+</html>

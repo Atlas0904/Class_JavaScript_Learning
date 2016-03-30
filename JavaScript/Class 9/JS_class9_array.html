@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title> JavaScript Class 9: Array </title>
+   <script type="text/javascript">
+
+    alert("Start");
+    var studentNum = Number(prompt("(一定要轉型) Please enter the number of student", "3"));  // Need to conversion
+    alert("Total " + studentNum + " in class");
+    var grades = new Array(studentNum);
+    for (var i = 0; i< grades.length; i++) {
+      grades[i] = Number(prompt("Enter student " + (i+1) + " th score:"));
+    }
+
+    var sum = 0;
+    for (var i=0; i< grades.length; i++) {
+      sum = sum + grades[i];
+    }
+    var avg = sum/ grades.length;
+    alert("avg =" + avg);
+
+   </script>
+ </head>
+ <body>
+
+ </body>
+ </html> 

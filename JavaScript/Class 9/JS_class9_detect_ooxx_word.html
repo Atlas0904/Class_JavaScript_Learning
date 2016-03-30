@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title> JavaScript Class 9: Detect OOXX word </title>
+   <script type="text/javascript">
+    function check() {
+      var input = document.getElementById("text").value.toLowerCase();
+      if (input.indexOf("fuck") > -1) {
+        alert("說好不要說 fuck");
+      } else {
+        alert("乖孩子");
+      }
+    }
+   </script>
+ </head>
+ <body>
+  <input type = "text" id = "text" value= "note 要用 value 取值"/> 
+  <button onclick="check();"> Check </button>
+ </body>
+ </html> 

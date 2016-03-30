@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title> JavaScript Class 9: Add new tab at all links </title>
+   <script type="text/javascript">
+    function init() {
+      var links = document.links;
+      for (var i = links.length - 1; i >= 0; i--) {
+        links[i].target = "_blank";
+      }
+    }
+   </script>
+ </head>
+ <body onload="init();">
+  <ul>
+      <h1> 用 document.links 取得網頁上所有link 用 target= "_blank" 開新視窗 </h1>
+      <li><a target= "_blank" href="http://wwww.google.com"> Google </a></li>
+      <li><a href="http://facebook.com.tw"> FB </a></li>
+  </ul>
+
+ </body>
+ </html> 

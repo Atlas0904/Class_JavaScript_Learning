@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 9: Scroll </title>
+  <script type="text/javascript">
+  var box;
+  function init() {
+    box = document.getElementById("box");
+    //box.scrollTop = 50;
+    window.setInterval(move, 50);
+  }
+  function move() {
+    box.scrollTop++;
+  }
+  </script>
+  <style type="text/css">
+  .box{ 
+    width: 400px; height: 120px; border: 1px solid black;
+    overflow: hidden;
+
+  }
+  // 寬高要有 auto, visible, hidden
+  </style>
+
+
+</head>
+<body onload="init();">
+<h1>
+  用程式控制捲軸 自動幫你轉捲軸
+</h1>
+<div class ="box" id = "box">
+Demo 超過 box 的行為 <br/>
+Default overflow: visible; <br/>
+<br/>
+這個 case 用 overflow: auto 所以有捲軸 <br/>
+<br/>
+Line  1 <br/>
+Line  2 <br/>
+Line  3 <br/>
+Line  4 <br/>
+Line  5 <br/>
+Line  6 <br/>
+Line  7 <br/>
+Line  8 <br/>
+Line  9 <br/>
+Line 10 <br/>
+Line 11 <br/>
+Line 12 <br/>
+</div>
+</body>
+</html>

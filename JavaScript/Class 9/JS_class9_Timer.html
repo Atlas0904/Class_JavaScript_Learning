@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 9: Timer </title>
+  <script type="text/javascript">
+    var timer;
+    function init() {
+      timer = document.getElementById("timer");
+      window.setTimeout(countdown, 1000);    // ms
+      
+    }
+    function countdown() {
+      timer.innerHTML = timer.innerHTML - 1;
+      if (timer.innerHTML > 0) {
+        window.setTimeout(countdown, 1000);
+      } else {
+        document.location="http://www.google.com"
+      }
+    }
+  </script>
+
+</head>
+<body onload="init();">
+  <span id ="timer"> 3 </span>
+</body>
+</html>

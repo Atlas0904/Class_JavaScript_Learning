@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> JavaScript Class 9: Pull down menu </title>
+  <script type="text/javascript">
+  function check() {
+    var gender =  document.getElementById("gender");
+    if (gender.selectedIndex == 0) {
+      alert("請選擇性別");
+    } else {
+     var option = gender.options[gender.selectedIndex]; 
+     alert(option.value);
+    }
+
+  }
+
+  </script>
+
+</head>
+<body>
+  <h1> 下拉式選單 </h1>
+  <h2> Check http://www.w3schools.com/jsref/coll_select_options.asp </h2>
+  <h2> option = gender.options[gender.selectedIndex] </h2>
+  <h2> optios 陣列, selectedIndex 被選到的 </h2>
+  <select class id= "gender" >
+    <option> 選擇性別 </option>
+    <option> 男 </option>
+    <option> 女 </option>
+  </select>
+  <button onclick="check();"> Check </button>
+  
+</body>
+</html>
