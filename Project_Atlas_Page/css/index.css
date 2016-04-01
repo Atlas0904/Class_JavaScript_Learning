@@ -22,5 +22,10 @@
   float: left;
   display: inline-block;
 }
+.alignToRight{
+	position:absolute;
+	right:200px;
+	//width: 100px;
+}
 //一定要有 width: 才能用 float
 // margin: 0px auto 靠中對其
