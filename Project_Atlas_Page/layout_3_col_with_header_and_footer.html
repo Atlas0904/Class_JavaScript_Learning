@@ -2,13 +2,23 @@
 
 <html>
 <head>
+<meta charset="UTF-8" />
 <title> Atlas Huang's coding and design </title>
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <script src="js/index.js"></script>
+<script type="text/javascript">
+	var nav_names = ["Introduction", "Resume", "Experience", "Expertise", "Education"];
+	function init() {
+		for (var i = 0; i < nav_names.length; i++) {
+			var nav = document.getElementById("nav-" + i);
+			nav.innerHTML = nav_names[i];
+		}
+	}
+</script>
 </head>
 
-<body style="margin: 0px; padding-left: 200px; padding-right: 200px; 
-font-family: 'Trebuchet MS',verdana;">
+<body onload="init();" style="margin: 0px; padding-left: 200px; padding-right: 200px; 
+font-family: 'Trebuchet MS',verdana;" >
 <table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0">
 
 
@@ -17,7 +27,7 @@ font-family: 'Trebuchet MS',verdana;">
 <tr>
 <td colspan="3" style="height: 120px;" bgcolor="#777d6a">
 <div class="headerWordingStyle"> Atlas Huang </div><br/>
-<div class="navWordingStyle" style="border: 0px;"> Doing is better than saying </div>
+<div class="navWordingStyle" style="border: 0px;"> Doing is better than saying :)</div>
 </td></tr>
 
 
@@ -30,12 +40,12 @@ font-family: 'Trebuchet MS',verdana;">
 
 <tr><td colspan="3" valign="middle" halign="left" height="25" bgcolor="#a9ae9f">
 <div class="navStyle">
-	<div class="navWordingStyle" on click= "showContent(Introduction);">Introduction</div>	
-	<div class="navWordingStyle" on click= "showContent(Resume);">Resume</div>	
-	<div class="navWordingStyle" on click= "showContent(Experience);">Experience</div>
-	<div class="navWordingStyle" on click= "showContent(Expertise);">Expertise</div>
-	<div class="navWordingStyle" on click= "showContent(Awards);">Awards</div>
-	<div class="navWordingStyle alignToRight">Contact me</div>
+	<div id="nav-0" class="navWordingStyle" onMouseOver="changeNavColor(this,'over');" onMouseOut="changeNavColor(this,'out');" onclick= "showContent(0);">Introduction</div>
+	<div id="nav-1" class="navWordingStyle" onMouseOver="changeNavColor(this,'over');" onMouseOut="changeNavColor(this,'out');" onclick= "showContent(1);">Resume</div>	
+	<div id="nav-2" class="navWordingStyle" onMouseOver="changeNavColor(this,'over');" onMouseOut="changeNavColor(this,'out');" onclick= "showContent(2);">Experience</div>
+	<div id="nav-3" class="navWordingStyle" onMouseOver="changeNavColor(this,'over');" onMouseOut="changeNavColor(this,'out');" onclick= "showContent(3);">Expertise</div>
+	<div id="nav-4" class="navWordingStyle" onMouseOver="changeNavColor(this,'over');" onMouseOut="changeNavColor(this,'out');" onclick= "showContent(4);">Awards</div>
+	<a class="navWordingStyle alignToRight" href="mailto:u920243@gmail.com">Contact me</div>
 </tr></td>
 <!--
 <tr><td colspan="3" valign="middle" height="25" bgcolor="#a9ae9f">
@@ -46,23 +56,88 @@ font-family: 'Trebuchet MS',verdana;">
 <!-- ============ LEFT COLUMN (MENU) ============== -->
 <td width="20%" valign="top" bgcolor="#999f8e">
 <img src="resource/michelin.jpg" width="100%" height=auto>
-<a href="https://github.com/Atlas0904">Github</a><br>
-<a href="#">Facebook</a><br>
-<a href="#">Plurk</a><br>
-<a href="#">Linked in</a><br>
-<a href="#">Stack Overflow</a>
+<a class="hyperlinkStyle" href="https://github.com/Atlas0904">Github</a>
+<a class="hyperlinkStyle" href="#">Facebook</a>
+<a class="hyperlinkStyle" href="#">Plurk</a>
+<a class="hyperlinkStyle" href="#">Linked in</a>
+<a class="hyperlinkStyle" href="#">Stack Overflow</a>
 </td>
 
 <!-- ============ MIDDLE COLUMN (CONTENT) ============== -->
 <td width="55%" valign="top" bgcolor="#d2d8c7">
 
-<h2>Page heading</h2>
-
-A three column layout with header, navigation bar and footer sections. The first, second and fourth table rows create the header, navigation bar and footer respectively and contain a single table cell each. All these table cells use colspan="3" attribute-value pair. <br>
+<div id="page-0">
+<h2>Introdution</h2>
+Hi, welcome to Atlas' space.  
+Hope to share you the new techinal product in our family and share new coding and design to improve your life.
+Please kindly let me know your thought and opinion. You can also contact me by email.
 <br>
 
-The third table row contains three table cells which create the menu column (left), the content column (middle) and the extra column (right).<br>
 <br>
+</div>
+
+<div id="page-1" style="display: none;">
+<h2>Resume</h2>
+A accomplished software engineer specializing on mobile functionality development and analysis on Android platform with seasoned experience to take charge of mobile phone developing life cycle. <br>
+<br>
+</div>
+
+<div id="page-2" style="display: none;">
+<h2>Exprience</h2>
+Senior Engineer 2015 March - Now<br>
+- Familiar with Android Telephony framework<br>
+- Data connection relate customer SPEC and compliance matrix fulfill<br>
+- CDMA phone feature implementation and design optimization (VZW, Sprint..)<br>
+- World phone and dual phone design optimization<br>
+- Join and discuss about RCS development in Android M release<br>
+<br>
+Senior Engineer Nov 2013 - 2015 March <br>
+- Expertise with Android ConnectivityService module (traffic control for application and WAN connection)<br>
+- Develop DSDS/DSDA dual SIM design solution before google release<br>
+- Data Usage feature implementation for customer feature and maintenance<br>
+- Maintain and debugging for Android VPN function<br>
+<br>
+Software Engineer & Senior Engineer Oct 2012 –Nov 2013<br>
+Android network feature development and performance optimization:<br>
+- DNS problem trouble shooting and maintenance<br>
+- Maintain Android Clat464 module (IPv4 application transfer in IPv6 only environment)<br>
+- Participate for Tethering IPv6 design and debugging (non- Qualcom solution)<br>
+- Network/ Socket problem debugging<br>
+- Network module stability maintain<br>
+<br>
+Software Engineer Oct 2010 – Sep 2012<br>
+Android WiMAX function in Android:<br>
+- Participate 1st hTC WiMAX phone and maintain all hTC WiMAX projects<br>
+- Develop 1st Japan & 1st Korea WiMAX phone<br>
+- Design and implement new WiMAX framework structure and feature (non-google native) function and communicate with firmware<br>
+- Strong knowledge about WiMAX framework include native daemon/ API and firmware algorithm design<br>
+- Android app develop for WiMAX debugging tool<br>
+- Debugging & Testing for WiMAX throughput problem<br>
+- Familiar with and complete WiMAX customer requirement<br> 
+<br>
+</div>
+
+<div id="page-3" style="display: none;"> 
+<h2>Expertise</h2>
+LANGUAGE: C/C++, Java, Matlab, Android, iOS – Swift, HTML/CSS, JavaScript, Git<br>
+OS: Windows, Linux, iOS<br>
+KNOWLEDGE: Connectivity, Network relate module, RIL, dual SIM design<br>
+<br>
+</div>
+
+<div id="page-4" style="display: none;">
+<h2>Education</h2>
+Institute of Computer Science and Information Engineering <br>
+National Taiwan University, Taipei, Taiwan, R.O.C., Master of Engineering<br> 
+Major: Computer Science and Information Engineering Aug. 2008 - Jul. 2010 <br>
+<br>
+Institute of Computer Science and Information Engineering <br>
+National Tsing Hua University, Hsinchu, Taiwan, R.O.C., Bachelor of Engineering <br>
+Major: Pure Mathematics Aug. 2003 - Jul. 2004 <br>
+Major: Computer Science and Information Engineering Aug. 2004 - Jul. 2008<br>
+<br>
+</div>
+
 
 </td>
 
