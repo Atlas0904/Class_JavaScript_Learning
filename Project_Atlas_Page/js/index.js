@@ -17,3 +17,15 @@ function changeNavColor(elt, action) {
 		elt.style.color = "white";
 	}
 }
+function init() {
+	var links = document.links;
+    for (var i = links.length - 1; i >= 0; i--) {
+      links[i].target = "_blank";
+    }
+
+	for (var i = 0; i < nav_names.length; i++) {
+		var nav = document.getElementById("nav-" + i);
+		nav.innerHTML = nav_names[i];
+	}
+
+}
