@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Population </title>
+</head>
+<body>
+<a href="http://localhost/city.php?city=taipei">Taipei</a>
+
+
+<h3> City Population: 用 action 指定辦事員 不用加參數 連線用 action 網址, name 當參數</h3>
+<h4> 前後端參數要訂好 </h4>
+<form action="http://localhost/city.php">
+	City <input type="text" name="city"/>
+	<input type="submit" value="search"></input>
+</form>
+
+<h3>用選的</h3>
+<form action="http://localhost/city.php">
+	City 
+	<select name="city">
+		<option value="taipei"> Taipei </option>
+		<option value="hsinchu"> HsinChu </option>
+	</select>
+	<input type="submit" value="search"></input>
+</form>
+
+
+</body>
+</html>
+<!--
+	city.php
+	test.html
+	-->
+
+<!-- 1. 表單搭配 submit, 和各種輸入工具
+	(單行輸入框, 下拉選單)
+	-->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> JavaScript Class 10: Ajax demo </title>
+	<script type="text/javascript">
+		function getPop() {
+			var city = document.getElementById("city").value;
+			var src = "http://localhost/city.php";
+			var args = "city=" + city;
+
+			// init 連線
+			var req =  new XMLHttpRequest();
+
+			// 設定連線
+			req.open("get", src + "?" + args);   // 1st 連線方法 (限時快遞, 普通) get or post
+
+			// 送出
+			
+
+			req.onload=function() {  // 註冊 load 事件處理器
+				// 取得伺服器回應結果
+				alert(this.responseText);
+				var result= document.getElementById("result");
+				result.innerHTML = this.responseText;
+			}
+			req.send();
+		}
+	</script>
+</head>
+<body>
+<h3> City Population: Ajax Demo </h3>
+<div>
+	City <input type="text" id="city" />
+	<button onclick="getPop();"> Search </button>
+	<span> Result= </span>
+	<div id="result"></div>
+</div>
+
+
+</body>
+</html>
