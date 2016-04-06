@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON: JavaScript Object Notation</title>
+	<script type="text/javascript">
+		/*
+		var point= new Object();
+		point.x =3;
+		point.y=4;
+		point.getPos=function(){
+			alert(this.x+","+this.y)
+		}
+		*/
+		var point= {"x":3, "y":4, "getPos": function() {
+			alert(this.x + "," + this.y);
+		}};   //程式實字  也可不加"" 但建議加 ""是規矩
+
+		point.getPos();
+
+		/*
+		inputs: 物件
+		成員 n1: 數字
+		成員 n2: 數字
+		*/
+		// function add (n1,n2) {
+		// 	alert(n1+n2);
+		// }
+		// add(3,4);
+
+		function add (inputs) {
+			alert(inputs.n1 + inputs.n2);
+		}
+		// var obj = new Object();
+		// obj.n1 =3;
+		// obj.n2 =4;
+		// add(obj);
+
+		add({n1:3, n2:4});
+
+	</script>
+</head>
+<body>
+<div>
+			/*
+		var point= new Object();
+		point.x =3;
+		point.y=4;
+		point.getPos=function(){
+			alert(this.x+","+this.y)
+		}
+		*/
+		var point= {"x":3, "y":4, "getPos": function() {
+			alert(this.x + "," + this.y);
+		}};   //程式實字
+		point.getPos();	
+</div>
+
+	
+</body>
+</html>
