@@ -6,37 +6,33 @@
 	<script type="text/javascript">
 		var box;
 		var text;
-		var faceInid;
 		var idFaceIn;
 		var idFaceOut;
 		var opacity = 0.5;
-		function init() {
-			window.document.getElementById("box").style.opacity=0.5;
-		}
+
 		function faceIn(elt) {
 			elt.innerHTML = "Mouse in."
-		    fadeinId = window.setInterval(function(){
+			window.clearInterval(idFaceOut);
+		    idFaceIn = window.setInterval(function(){
 				if (elt.style.opacity <= 0.99) {
-					opacity = elt.style.opacity;
-					text.innerHTML = "opacity: " + opacity;
 					opacity += 0.1;
 					elt.style.opacity = opacity;
 				} else {
 					elt.innerHTML = "Mouse in done";
-					elt.style.opacity = 1;
 				}		    	
-		    }, 1000);
+		    }, 50);
 		}
 		function faceOut(elt) {
 			elt.innerHTML = "Mouse out."
+			window.clearInterval(idFaceIn);
 		    idFaceOut = window.setInterval(function(){
-				if (elt.style.opacity >= 0) {
-					text.innerHTML = "opacity: " + text.style.opacity;
-					elt.style.opacity -= 0.1;
+				if (elt.style.opacity >= 0.4) {
+					opacity -= 0.1;
+					elt.style.opacity = opacity;
 				} else {
 					elt.innerHTML = "Mouse out done";
 				}		    	
-		    }, 200);			
+		    }, 50);			
 		}
 	</script>
 	<style type="text/css">
@@ -50,13 +46,12 @@
 	    line-height: 200px;
 	    font-weight: bold;
 	    font-size: 20px;
-	    opacity: 0.9;
+	    opacity: 0.5;
 	    border-radius: 10px;
 		}
 	</style>
 </head>
-<body onload="init();">
+<body>
 	<div class="box" id="box" onmouseover="faceIn(this);" onmouseout="faceOut(this);"></div>
-	<div id="text"> Init </div>
 </body>
 </html>
