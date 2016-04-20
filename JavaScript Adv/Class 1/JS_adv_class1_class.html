@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> JavaScript Adv Class 1: Obj </title>
+	<script type="text/javascript">
+
+		/*
+		args: 物件
+		n1: 數字
+		n2: 數字
+		callback: 函式
+		*/
+		function add(args){
+			args.callback(args.n1 + args.n2);
+		}
+		add({
+			n1: 1, 
+			n2: 3, 
+			callback: function(result) { 
+				alert(result); 
+			} 
+		});
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

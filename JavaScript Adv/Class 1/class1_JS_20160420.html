@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> JavaScript Adv Class 1: function </title>
+	<script type="text/javascript">
+		// function test() {
+		// 	alert("Hello");
+		// }
+		// test();
+
+		// 匿名函式
+		(function(){
+			alert("Hello");
+		})();
+
+		window.setTimeout(function(){
+			alert("1 sec show function");
+		}, 100);
+
+		//回呼函式
+		function add(n1,n2, callback) {
+			callback(n1 + n2);
+		}
+
+		var handler = function(result) {
+			alert(result);
+		};
+
+		var handler2 = function(result) {
+			alert("Hello your result is" + result);
+		};
+
+		add(3, 4, function(result) {
+			alert("Anonymous function result" + result);
+		});
+
+		add(5, 6, handler);
+		add(7, 8, handler2);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

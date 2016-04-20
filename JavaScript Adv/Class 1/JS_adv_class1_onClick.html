@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> JavaScript Adv Class 1: onload </title>
+	<script type="text/javascript">
+		window.onload = function(){  //靜態內容完成觸發
+			alert("Hello window onload");
+		};
+
+		window.addEventListener("load", function(){
+			alert("Hello use addEventListener");
+
+			var btn = document.getElementById("btn");
+			btn.onclick = function() {
+				alert("btn onclick perform");
+			}
+		});
+
+
+	</script>
+</head>
+<body>
+<button id="btn"> Click </button>	
+</body>
+</html>
