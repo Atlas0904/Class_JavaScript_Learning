@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> JavaScript Adv Class 2: JQuery </title>
+	<script type="text/javascript" src="src/jquery-2.2.3.min.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("a").attr("target","_blank")
+		      	.click(function(e){
+					e.preventDefault();  // 擋掉先不去 link
+					//alert(this.innerHTML);
+					$(this).fadeOut().fadeIn();
+					//alert($(this).html());  // $: 選到 XXX 套用方法 html()
+			  	});
+
+	});
+	function change(){
+		// addClass, removeClass, toggleClass
+		//$("a").addClass("link-change");
+		$("a").toggleClass("link-change");
+	}
+	function clickOnLink() {
+		$("a").click(function(e){
+			e.preventDefault();
+			alert("Hello");
+		});
+	}
+
+	</script>
+	<style type="text/css">
+	.link{
+		color: #336689;
+	}
+	.link-change{
+		color: #aa0000; font-weight: bold;
+	}
+	</style>
+</head>
+<body>
+	<button onclick="change();">Change</button>
+	<b2> Toggle Class </b2>	
+	<b3> Favorite Sites </b3>
+	<ul>
+		<li><a class="link" href="http://google.com.tw"> Google </a></li>
+		<li><a class="link" href="http://facebook.com.tw"> Facebook </a></li>
+	</ul>
+	<button onclick="clickOnLink();"> Demo A click </button>
+</body>
+</html>
