@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> JavaScript_Adv Class 4: User Draw </title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript">
+		var cvs, cts, color;
+		window.onload=function(){
+			cvs = document.getElementById("cvs");
+			ctx = cvs.getContext("2d");
+			cvs.addEventListener("mousedown", draw);
+		};
+		function getFile(input) {
+			console.log(input.files);
+			var file = input.files[0];
+			var src= URL.createObjectURL(file); //取得檔案網址
+
+			//alert(src);
+			// Load   
+			var img = new Image();
+			img.src = src;
+			img.onload=function(){
+				ctx.drawImage(this,0 ,0 , cvs.width, cvs.height);
+			};
+		};	
+		function saveFile() {
+			var src = cvs.toDataURL("image/png");
+			var link = document.getElementById("download");
+			link.href = src;
+			link.download="filename";
+			link.click();
+		}
+		function draw(e) {
+			//滑鼠點下的瞬間
+			var currentX = e.clientX - cvs.offsetLeft;
+			var currentY = e.clientY - cvs.offsetTop;
+			ctx.strokeStyle =document.getElementById("color").value;
+			ctx.lineWidth = document.getElementById("width").value;
+
+			var move=function(e) {
+				//滑鼠移動的過程				
+				ctx.beginPath();
+				ctx.moveTo(currentX, currentY);
+				ctx.lineTo(e.clientX - cvs.offsetLeft, e.clientY - cvs.offsetTop);
+				ctx.closePath();
+				//cts.strokeStyle = "red";
+				ctx.stroke();
+
+				// update current point
+				currentX = e.clientX - cvs.offsetLeft;
+				currentY = e.clientY - cvs.offsetTop;
+
+			};
+			var end = function() {
+				// 滑鼠放開的瞬間
+				cvs.removeEventListener("mousemove", move);
+				cvs.removeEventListener("mouseup", end);
+			};
+			cvs.addEventListener("mousemove", move);
+			cvs.addEventListener("mouseup", end);
+		};
+	</script>
+</head>
+<body>
+	<h3> Photo Editor</h3>
+	
+	<div>
+		<input id="file" size="35" type="file" onchange="getFile(this);"></input>
+		<button onclick="saveFile();">Save</button>
+		<a id="download" download="image.png" href=""></a>
+		<input id="color" size="35" type="color"></input>
+		<input id="width" size="35" type="number" min="1" max="100" step="1" value="1"></input>
+	</div>
+
+	<canvas id="cvs" width="600" height="450" style="border:1px solid #000000"></canvas>	
+</body>
+</html>

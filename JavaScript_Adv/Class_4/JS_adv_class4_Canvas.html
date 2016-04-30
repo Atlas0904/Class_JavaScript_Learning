@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> JavaScript_Adv Class 4: Canvas </title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript">
+		var cvs, cts
+		window.onload=function(){
+			cvs = document.getElementById("cvs");
+			ctx = cvs.getContext("2d");
+			ctx.fillRect(50, 50, 100, 100);
+			ctx.strokeRect(200, 200, 100, 50);
+			ctx.beginPath();
+			ctx.moveTo(200, 150);
+			ctx.lineTo(250,200);
+			ctx.lineTo(50,50);
+			ctx.closePath();
+			ctx.stroke();
+		};
+	</script>
+</head>
+<body>
+	<h3> Photo Editor</h3>
+	<canvas id="cvs" width="600" height="450" style="border:1px solid #000000"></canvas>	
+</body>
+</html>

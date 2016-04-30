@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> JavaScript_Adv Class 4: Basic Concept </title>
+<script type="text/javascript">
+	function test(){
+		alert(this.x);
+	}
+	function test1(){
+		alert(this);
+	}
+	//test();
+	// document.addEventListener("mouseover", function(){
+	// 	alert(this);
+	// });
+	test = test.bind({"x":3});
+	test();
+	test = test.bind(document);
+	test();
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
