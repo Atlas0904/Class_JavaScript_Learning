@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> JavaScript_Adv Class 5: Bind function </title>
+
+	<script type="text/javascript">
+	var cvx, ctx;
+	window.onload=function(){
+		cvs=document.getElementById("cvs");
+		ctx=cvs.getContext("2d");
+		var img = new Image();
+		img.src = "macbook.jpg";
+		img.onload = function() {
+			ctx.drawImage(this,0,0);
+		}
+	};
+	function invert() {
+		//取得 Cavas 的像素部分
+		var pixels = ctx.getImageData(0,0,cvs.width,cvs.height);
+		console.log(pixels.data);
+		for(var i=0; i<pixels.data.length; i+=4){
+			pixels.data[i]= 255 - pixels.data[i];
+			pixels.data[i+1]= 255 - pixels.data[i+1];
+			pixels.data[i+2]= 255 - pixels.data[i+2];
+			// pixel.data[i+3] => 透明度
+		}
+		ctx.putImageData(pixels,0,0);
+	}
+	function grayscale() {
+		var pixels = ctx.getImageData(0,0,cvs.width,cvs.height);
+		var avg;
+		for(var i=0; i< pixels.data.length; i+=4) {
+			avg = (pixels.data[i] + pixels.data[i+1] + pixels.data[i+2])/3;
+			avg = Math.round(avg);
+			pixels.data[i] = pixels.data[i+1] = pixels.data[i+2] = avg;
+		}
+		ctx.putImageData(pixels,0,0)
+	}
+	function saveFile() {
+		// 將畫布資料 轉換成 Blob 物件
+		cvs.toBlob(function(blob){
+
+		var src = URL.createObjectURL(blob);
+		var link=document.getElementById("download");
+		link.download="image.jpg";
+		link.href=src;  // 重點是這個 連結網址 <=> 圖片資料
+		link.click();
+
+		}, "image/png");  // 1st para callback, 2nd: file format
+
+
+	}
+	if (!HTMLCanvasElement.prototype.toBlob) {
+	 Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
+	  value: function (callback, type, quality) {
+
+	    var binStr = atob( this.toDataURL(type, quality).split(',')[1] ),
+	        len = binStr.length,
+	        arr = new Uint8Array(len);
+
+	    for (var i=0; i<len; i++ ) {
+	     arr[i] = binStr.charCodeAt(i);
+	    }
+
+	    callback( new Blob( [arr], {type: type || 'image/png'} ) );
+	  }
+	 });
+	}
+	</script>
+
+</head>
+<body>
+	<div>
+		<button onclick="invert();">Invert</button>
+		<button onclick="grayscale();">GrayScale</button>
+		<button onclick="saveFile();">Save</button>
+		<a id="download"></a>
+	</div>
+	<canvas id="cvs" width="640" height="480"></canvas>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> JavaScript_Adv Class 5: Google Drive API </title>
+
+	<script type="text/javascript">
+	var CLIENT_ID = '454288574839-6tdvm5p72ku03rk8cj1bvmh6bhanvinn.apps.googleusercontent.com';
+	var SCOPES = ['https://www.googleapis.com/auth/drive'];
+
+
+		/**
+		 * Check if current user has authorized this application.
+		 */
+		// Google 套件載入完畢 偵測使用者授權狀態
+		function init() {
+		  gapi.auth.authorize(
+		    {
+		    //開發者是誰
+		      'client_id': CLIENT_ID,
+		    // 要哪些授權
+		      'scope': SCOPES.join(' '),
+		    // 偵測還是鼓勵? true: 偵測狀態, false:鼓勵授權
+		      'immediate': true
+		    }, handleAuthResult); // callback
+		  	// 用 OAuth 的 client ID: 454288574839-6tdvm5p72ku03rk8cj1bvmh6bhanvinn.apps.googleusercontent.com	
+		}
+		/**
+		 * Handle response from authorization server.
+		 *
+		 * @param {Object} authResult Authorization result.
+		 */
+		function handleAuthResult(authResult) {
+			var main=document.getElementById("main");
+			var login = document.getElementById("login");
+			main.style.display="none";
+			login.style.display="none";
+
+			  if (authResult && !authResult.error) { // 已授權
+			  	main.style.display="block";
+			  } else {  //未授權
+			  	login.style.display="block";
+			  }
+		}
+		function loginDrive() {
+			gapi.auth.authorize(
+			  {
+			    'client_id': CLIENT_ID,
+			    'scope': SCOPES.join(' '),
+			    'immediate': false
+			  }, handleAuthResult); // callback
+		}
+	</script>
+    <script src="https://apis.google.com/js/client.js?onload=init">
+    </script>
+
+</head>
+<body>
+	<div id="login" style="display: none">
+		<button onclick="loginDrive();">Login</button>
+	</div>
+	<div id="main" style="display: none">
+		Hello. Main Graph show Hello for demo.
+	</div>
+</body>
+</html>
